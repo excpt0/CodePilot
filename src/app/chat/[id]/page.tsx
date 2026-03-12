@@ -32,7 +32,7 @@ export default function ChatSessionPage({ params }: ChatSessionPageProps) {
   const [isEditingTitle, setIsEditingTitle] = useState(false);
   const [editTitle, setEditTitle] = useState('');
   const titleInputRef = useRef<HTMLInputElement>(null);
-  const { setWorkingDirectory, setSessionId, setSessionTitle: setPanelSessionTitle, setPanelOpen } = usePanel();
+  const { setWorkingDirectory, setSessionId, setSessionTitle: setPanelSessionTitle } = usePanel();
   const { t } = useTranslation();
 
   const handleStartEditTitle = useCallback(() => {
@@ -102,7 +102,6 @@ export default function ChatSessionPage({ params }: ChatSessionPageProps) {
             window.dispatchEvent(new Event('refresh-file-tree'));
           }
           setSessionId(id);
-          setPanelOpen(true);
           const title = data.session.title || t('chat.newConversation');
           setSessionTitle(title);
           setPanelSessionTitle(title);
@@ -121,7 +120,7 @@ export default function ChatSessionPage({ params }: ChatSessionPageProps) {
 
     loadSession();
     return () => { cancelled = true; };
-  }, [id, setWorkingDirectory, setSessionId, setPanelSessionTitle, setPanelOpen, t]);
+  }, [id, setWorkingDirectory, setSessionId, setPanelSessionTitle, t]);
 
   useEffect(() => {
     // Reset state when switching sessions

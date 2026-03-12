@@ -11,6 +11,7 @@ import { UpdateDialog } from "./UpdateDialog";
 import { UpdateBanner } from "./UpdateBanner";
 import { DocPreview } from "./DocPreview";
 import { PanelContext, type PanelContent, type PreviewViewMode } from "@/hooks/usePanel";
+import { computePanelOpenOnRouteChange } from "@/lib/panel-state-logic";
 import { UpdateContext } from "@/hooks/useUpdate";
 import { useUpdateChecker } from "@/hooks/useUpdateChecker";
 import { ImageGenContext, useImageGenState } from "@/hooks/useImageGen";
@@ -114,6 +115,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     setChatListOpenRaw(open);
   }, []);
   const [panelOpenRaw, setPanelOpenRaw] = useState(false);
+  // Tracks whether the previous route was a chat detail page, so the route-change
+  // effect can distinguish "switching chats" (preserve panel state) from "entering
+  // chat from settings/etc." (auto-open). Initialised to false so cold-start on
+  // /chat/[id] is treated as "entering chat" and opens the panel.
+  const wasChatDetailRouteRef = useRef(false);
   const [panelContent, setPanelContent] = useState<PanelContent>("files");
   const [workingDirectory, setWorkingDirectory] = useState("");
   const [sessionId, setSessionId] = useState("");
@@ -148,6 +154,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const [splitSessions, setSplitSessions] = useState<SplitSession[]>(() => loadSplitSessions());
   const [activeColumnId, setActiveColumnIdRaw] = useState<string>(() => loadActiveColumn());
   const isSplitActive = splitSessions.length >= 2;
+  // Note: in split mode isChatDetailRoute is always true regardless of pathname,
+  // which means computePanelOpenOnRouteChange will preserve the panel state (correct).
   const isChatDetailRoute = pathname.startsWith("/chat/") || isSplitActive;
 
   // Persist split sessions to localStorage
@@ -319,11 +327,15 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     });
   }, []);
 
-  // Sync panel state on route changes: open on chat detail, close otherwise.
+  // Sync panel state on route changes: preserve user's open/close preference
+  // when switching between chats; open when entering chat from non-chat route.
   // Reset doc preview when navigating between pages/sessions.
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setPanelOpenRaw(isChatDetailRoute);
+     
+    setPanelOpenRaw((prev) =>
+      computePanelOpenOnRouteChange(isChatDetailRoute, prev, wasChatDetailRouteRef.current)
+    );
+    wasChatDetailRouteRef.current = isChatDetailRoute;
     setPreviewFileRaw(null);
   }, [pathname, isChatDetailRoute]);
   const panelOpen = panelOpenRaw;
