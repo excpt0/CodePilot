@@ -42,7 +42,6 @@ export function ChatView({ sessionId, initialMessages = [], initialHasMore = fal
   const router = useRouter();
   const [messages, setMessages] = useState<Message[]>(initialMessages);
   const [permissionProfile, setPermissionProfile] = useState<'default' | 'full_access'>(initialPermissionProfile || 'default');
-
   // Workspace mismatch banner state
   const [workspaceMismatchPath, setWorkspaceMismatchPath] = useState<string | null>(null);
   const [hasMore, setHasMore] = useState(initialHasMore);

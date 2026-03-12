@@ -94,7 +94,7 @@ export function TaxonomyTabPanel({ taxonomy }: TaxonomyTabPanelProps) {
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-muted-foreground">{t('assistant.taxonomySource')}: {cat.source}</span>
-                <span className={`px-1.5 py-0.5 rounded text-[10px] ${
+                <span className={`px-1.5 py-0.5 rounded text-[0.625rem] ${
                   cat.confidence > 0.7 ? 'bg-status-success-muted text-status-success-foreground' :
                   cat.confidence > 0.4 ? 'bg-status-warning-muted text-status-warning-foreground' :
                   'bg-status-error-muted text-status-error-foreground'

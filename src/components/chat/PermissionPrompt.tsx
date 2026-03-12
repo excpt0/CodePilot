@@ -105,7 +105,7 @@ function AskUserQuestionUI({
         return (
           <div key={qIdx} className="space-y-2">
             {q.header && (
-              <span className="inline-block rounded-full bg-muted px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
+              <span className="inline-block rounded-full bg-muted px-2 py-0.5 text-[0.625rem] font-medium text-muted-foreground">
                 {q.header}
               </span>
             )}
@@ -217,7 +217,7 @@ function ExitPlanModeUI({
           <ul className="space-y-0.5">
             {allowedPrompts.map((p, i) => (
               <li key={i} className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                <span className="rounded bg-muted px-1.5 py-0.5 font-mono text-[10px]">{p.tool}</span>
+                <span className="rounded bg-muted px-1.5 py-0.5 font-mono text-[0.625rem]">{p.tool}</span>
                 <span>{p.prompt}</span>
               </li>
             ))}

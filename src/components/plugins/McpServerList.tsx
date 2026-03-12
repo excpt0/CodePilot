@@ -153,7 +153,7 @@ export function McpServerList({ servers, onEdit, onDelete, runtimeStatus, active
                     : `${server.command} ${server.args?.join(' ') || ''}`}
                 </CardDescription>
                 {runtime?.serverInfo && (
-                  <p className="text-[10px] text-muted-foreground mt-0.5">
+                  <p className="text-[0.625rem] text-muted-foreground mt-0.5">
                     {runtime.serverInfo.name} v{runtime.serverInfo.version}
                   </p>
                 )}

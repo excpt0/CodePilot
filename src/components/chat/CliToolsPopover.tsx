@@ -89,7 +89,7 @@ export function CliToolsPopover({
                 <Terminal size={16} className="shrink-0 text-muted-foreground" />
                 <span className="font-medium text-xs truncate">{tool.name}</span>
                 {tool.version && (
-                  <span className="text-[10px] text-muted-foreground shrink-0">v{tool.version}</span>
+                  <span className="text-[0.625rem] text-muted-foreground shrink-0">v{tool.version}</span>
                 )}
                 {tool.summary && (
                   <span className="text-xs text-muted-foreground truncate ml-auto max-w-[200px]">{tool.summary}</span>

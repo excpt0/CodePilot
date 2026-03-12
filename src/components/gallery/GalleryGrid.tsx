@@ -67,7 +67,7 @@ export function GalleryGrid({ items, onSelect }: GalleryGridProps) {
                 </div>
               )}
               {item.images.length > 1 && (
-                <span className="absolute top-1.5 right-1.5 rounded-full bg-black/50 px-1.5 py-0.5 text-[10px] text-white font-medium">
+                <span className="absolute top-1.5 right-1.5 rounded-full bg-black/50 px-1.5 py-0.5 text-[0.625rem] text-white font-medium">
                   {item.images.length}
                 </span>
               )}

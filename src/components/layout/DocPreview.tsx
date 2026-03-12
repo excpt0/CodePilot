@@ -146,11 +146,11 @@ export function DocPreview({
 
       {/* Breadcrumb + language — subtle, no border */}
       <div className="flex shrink-0 items-center gap-2 px-3 pb-2">
-        <p className="min-w-0 flex-1 truncate text-[11px] text-muted-foreground/60">
+        <p className="min-w-0 flex-1 truncate text-[0.6875rem] text-muted-foreground/60">
           {breadcrumb}
         </p>
         {preview && (
-          <span className="shrink-0 text-[10px] text-muted-foreground/50">
+          <span className="shrink-0 text-[0.625rem] text-muted-foreground/50">
             {preview.language}
           </span>
         )}
@@ -187,7 +187,7 @@ function ViewModeToggle({
   onChange: (v: ViewMode) => void;
 }) {
   return (
-    <div className="flex h-6 items-center rounded-full bg-muted p-0.5 text-[11px]">
+    <div className="flex h-6 items-center rounded-full bg-muted p-0.5 text-[0.6875rem]">
       <Button
         variant="ghost"
         size="sm"
@@ -236,7 +236,7 @@ function SourceView({ preview, isDark }: { preview: FilePreviewType; isDark: boo
           margin: 0,
           padding: "8px",
           borderRadius: 0,
-          fontSize: "11px",
+          fontSize: "0.6875rem",
           lineHeight: "1.5",
           background: "transparent",
         }}

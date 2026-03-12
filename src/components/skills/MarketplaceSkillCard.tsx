@@ -36,7 +36,7 @@ export function MarketplaceSkillCard({
           {skill.isInstalled ? (
             <Badge
               variant="outline"
-              className="text-[10px] px-1.5 py-0 border-status-success-border text-status-success-foreground"
+              className="text-[0.625rem] px-1.5 py-0 border-status-success-border text-status-success-foreground"
             >
               <CheckCircle size={10} className="mr-0.5" />
               {t('skills.installed')}

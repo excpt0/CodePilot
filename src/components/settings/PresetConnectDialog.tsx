@@ -358,7 +358,7 @@ export function PresetConnectDialog({
                 placeholder="ark-code-latest"
                 className="text-sm font-mono"
               />
-              <p className="text-[11px] text-muted-foreground">
+              <p className="text-[0.6875rem] text-muted-foreground">
                 {isZh
                   ? '在服务商控制台配置的模型名称，如 ark-code-latest、doubao-seed-2.0-code'
                   : 'Model name configured in provider console, e.g. ark-code-latest'}
@@ -399,7 +399,7 @@ export function PresetConnectDialog({
                       <Label className="text-xs text-muted-foreground">
                         {isZh ? '模型名称映射' : 'Model Name Mapping'}
                       </Label>
-                      <p className="text-[11px] text-muted-foreground leading-relaxed">
+                      <p className="text-[0.6875rem] text-muted-foreground leading-relaxed">
                         {isZh
                           ? '如果服务商使用不同的模型名称（如 claude-sonnet-4-6），在此映射。留空则使用默认名称（sonnet / opus / haiku）。'
                           : 'Map model names if the provider uses different IDs (e.g. claude-sonnet-4-6). Leave empty to use defaults (sonnet / opus / haiku).'}

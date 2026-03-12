@@ -99,14 +99,14 @@ export function SessionListItem({
           )}
         </span>
         <div className="flex-1 min-w-0">
-          <span className="line-clamp-1 text-[13px] font-medium leading-tight break-all">
+          <span className="line-clamp-1 text-[0.8125rem] font-medium leading-tight break-all">
             {session.title}
           </span>
         </div>
         {/* Right area — fixed width, time and delete stacked with opacity */}
         <div className="relative w-[38px] h-4 shrink-0">
           <span className={cn(
-            "absolute inset-0 flex items-center justify-end text-[11px] text-muted-foreground/40 truncate transition-opacity",
+            "absolute inset-0 flex items-center justify-end text-[0.6875rem] text-muted-foreground/40 truncate transition-opacity",
             (isHovered || isDeleting) ? "opacity-0" : "opacity-100"
           )}>
             {formatRelativeTime(session.updated_at, t)}
@@ -192,7 +192,7 @@ export function SplitGroupSection({
                 </span>
               )}
               <div className="flex-1 min-w-0">
-                <span className="line-clamp-1 text-[13px] font-medium leading-tight break-all">
+                <span className="line-clamp-1 text-[0.8125rem] font-medium leading-tight break-all">
                   {session.title}
                 </span>
               </div>

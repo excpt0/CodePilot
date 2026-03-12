@@ -7,6 +7,8 @@ import { I18nProvider } from "@/components/layout/I18nProvider";
 import { AppShell } from "@/components/layout/AppShell";
 import { getAllThemeFamilies, getThemeFamilyMetas } from "@/lib/theme/loader";
 import { renderThemeFamilyCSS } from "@/lib/theme/render-css";
+import { AppearanceProvider } from "@/components/layout/AppearanceProvider";
+import { FONT_SIZES, DEFAULT_FONT_SIZE, APPEARANCE_STORAGE_KEY } from "@/lib/appearance";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,12 +34,18 @@ export default function RootLayout({
   const familiesMeta = getThemeFamilyMetas();
   const themeFamilyCSS = renderThemeFamilyCSS(families);
   const validIds = families.map((f) => f.id);
+  const fontSizePxMap = JSON.stringify(
+    Object.fromEntries(Object.entries(FONT_SIZES).map(([k, v]) => [k, v.px]))
+  );
 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         {/* Anti-FOUC: set data-theme-family from localStorage, validate against known IDs */}
         <script dangerouslySetInnerHTML={{ __html: `(function(){try{var v=${JSON.stringify(validIds)};var f=localStorage.getItem('codepilot_theme_family')||'default';if(v.indexOf(f)<0)f='default';document.documentElement.setAttribute('data-theme-family',f)}catch(e){}})();` }} />
+        {/* Anti-FOUC: set font-size from localStorage before hydration.
+            Key and px map generated from @/lib/appearance — no hardcoded values. */}
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var s=localStorage.getItem(${JSON.stringify(APPEARANCE_STORAGE_KEY)});var m=${fontSizePxMap};var p=m[s]||${FONT_SIZES[DEFAULT_FONT_SIZE].px};document.documentElement.style.fontSize=p+'px'}catch(e){}})();` }} />
         <style id="theme-family-vars" dangerouslySetInnerHTML={{ __html: themeFamilyCSS }} />
       </head>
       <body
@@ -45,9 +53,11 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <ThemeFamilyProvider families={familiesMeta}>
-            <I18nProvider>
-              <AppShell>{children}</AppShell>
-            </I18nProvider>
+            <AppearanceProvider>
+              <I18nProvider>
+                <AppShell>{children}</AppShell>
+              </I18nProvider>
+            </AppearanceProvider>
           </ThemeFamilyProvider>
         </ThemeProvider>
       </body>

@@ -59,18 +59,18 @@ export function BatchExecutionItem({ item }: BatchExecutionItemProps) {
       <div className="flex-1 min-w-0">
         <p className="text-xs text-foreground truncate">{item.prompt}</p>
         <div className="flex items-center gap-2 mt-0.5">
-          <span className="text-[10px] text-muted-foreground">{item.aspect_ratio}</span>
-          <span className="text-[10px] text-muted-foreground">{item.image_size}</span>
-          <span className={`text-[10px] font-medium ${statusColor}`}>{statusLabel}</span>
+          <span className="text-[0.625rem] text-muted-foreground">{item.aspect_ratio}</span>
+          <span className="text-[0.625rem] text-muted-foreground">{item.image_size}</span>
+          <span className={`text-[0.625rem] font-medium ${statusColor}`}>{statusLabel}</span>
           {item.error && (
-            <span className="text-[10px] text-status-error-foreground truncate">{item.error}</span>
+            <span className="text-[0.625rem] text-status-error-foreground truncate">{item.error}</span>
           )}
         </div>
       </div>
 
       {/* Retry count */}
       {item.retry_count > 0 && (
-        <span className="text-[10px] text-muted-foreground shrink-0">
+        <span className="text-[0.625rem] text-muted-foreground shrink-0">
           retry {item.retry_count}
         </span>
       )}

@@ -75,7 +75,7 @@ export function ProjectGroupHeader({
           ) : (
             <FolderOpen size={16} className="shrink-0 text-muted-foreground" />
           )}
-          <span className="flex-1 truncate text-[13px] font-medium text-sidebar-foreground">
+          <span className="flex-1 truncate text-[0.8125rem] font-medium text-sidebar-foreground">
             {displayName}
           </span>
           {isWorkspace && (
@@ -110,7 +110,7 @@ export function ProjectGroupHeader({
       </TooltipTrigger>
       <TooltipContent side="right" className="max-w-xs">
         <p className="text-xs break-all">{workingDirectory || 'No Project'}</p>
-        {workingDirectory && <p className="text-[10px] text-muted-foreground mt-0.5">Double-click to open in Finder</p>}
+        {workingDirectory && <p className="text-[0.625rem] text-muted-foreground mt-0.5">Double-click to open in Finder</p>}
       </TooltipContent>
     </Tooltip>
   );

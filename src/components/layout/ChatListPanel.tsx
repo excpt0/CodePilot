@@ -372,7 +372,7 @@ export function ChatListPanel({ open, width }: ChatListPanelProps) {
         <div className="flex flex-col pb-3">
           {/* Section title */}
           <div className="px-2 pt-1 pb-1.5">
-            <span className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground/60">
+            <span className="text-[0.6875rem] font-medium uppercase tracking-wider text-muted-foreground/60">
               {t('chatList.threads')}
             </span>
           </div>
@@ -393,7 +393,7 @@ export function ChatListPanel({ open, width }: ChatListPanelProps) {
           )}
 
           {filteredSessions.length === 0 && (!isSplitActive || splitSessions.length === 0) ? (
-            <p className="px-2.5 py-3 text-[11px] text-muted-foreground/60">
+            <p className="px-2.5 py-3 text-[0.6875rem] text-muted-foreground/60">
               {searchQuery ? "No matching threads" : t('chatList.noSessions')}
             </p>
           ) : (
@@ -461,7 +461,7 @@ export function ChatListPanel({ open, width }: ChatListPanelProps) {
 
       {/* Version */}
       <div className="shrink-0 px-3 py-2 text-center">
-        <span className="text-[10px] text-muted-foreground/40">
+        <span className="text-[0.625rem] text-muted-foreground/40">
           v{process.env.NEXT_PUBLIC_APP_VERSION}
         </span>
       </div>

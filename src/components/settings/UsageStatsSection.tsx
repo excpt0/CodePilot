@@ -386,7 +386,7 @@ function StatCard({
     <div className="rounded-lg border border-border/50 p-4 transition-shadow hover:shadow-sm">
       <p className="text-xs text-muted-foreground">{label}</p>
       <p className="mt-1 text-xl font-semibold tabular-nums">{value}</p>
-      {sub && <p className="mt-0.5 text-[11px] text-muted-foreground">{sub}</p>}
+      {sub && <p className="mt-0.5 text-[0.6875rem] text-muted-foreground">{sub}</p>}
     </div>
   );
 }

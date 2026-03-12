@@ -69,7 +69,7 @@ export function BatchPlanRow({ item, index, onUpdate, onRemove, disabled }: Batc
             {item.tags.length > 0 && (
               <div className="flex items-center gap-1 overflow-hidden">
                 {item.tags.map((tag, i) => (
-                  <span key={i} className="inline-block rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 px-1.5 py-0 text-[10px]">
+                  <span key={i} className="inline-block rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 px-1.5 py-0 text-[0.625rem]">
                     {tag}
                   </span>
                 ))}
@@ -84,7 +84,7 @@ export function BatchPlanRow({ item, index, onUpdate, onRemove, disabled }: Batc
               size="xs"
               onClick={() => onRemove(index)}
               disabled={disabled}
-              className="text-[10px] text-muted-foreground hover:text-status-error-foreground opacity-0 group-hover:opacity-100 disabled:opacity-0 h-auto p-0"
+              className="text-[0.625rem] text-muted-foreground hover:text-status-error-foreground opacity-0 group-hover:opacity-100 disabled:opacity-0 h-auto p-0"
             >
               {t('batchImageGen.removeItem' as TranslationKey)}
             </Button>

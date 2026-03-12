@@ -92,7 +92,7 @@ export function MarketplaceSkillDetail({
               {skill.isInstalled && (
                 <Badge
                   variant="outline"
-                  className="text-[10px] px-1.5 py-0 border-status-success-border text-status-success-foreground shrink-0"
+                  className="text-[0.625rem] px-1.5 py-0 border-status-success-border text-status-success-foreground shrink-0"
                 >
                   <CheckCircle size={10} className="mr-0.5" />
                   {t('skills.installed')}

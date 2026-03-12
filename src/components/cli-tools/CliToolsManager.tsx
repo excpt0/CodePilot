@@ -180,7 +180,7 @@ export function CliToolsManager() {
             <div className="text-xs text-muted-foreground">
               <p className="font-medium text-foreground mb-1">{t('cliTools.brewNotInstalled')}</p>
               <p>{t('cliTools.brewInstallGuide')}</p>
-              <code className="block mt-1.5 bg-muted/50 rounded px-2 py-1 text-[11px] font-mono select-all">
+              <code className="block mt-1.5 bg-muted/50 rounded px-2 py-1 text-[0.6875rem] font-mono select-all">
                 /bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
               </code>
             </div>

@@ -197,18 +197,18 @@ export function GalleryDetail({
             {/* Metadata badges */}
             <div className="flex items-center gap-1.5 flex-wrap">
               {item.model && (
-                <Badge variant="secondary" className="text-[10px] gap-1">
+                <Badge variant="secondary" className="text-[0.625rem] gap-1">
                   <PaintBrush size={12} />
                   {item.model}
                 </Badge>
               )}
               {item.aspectRatio && (
-                <Badge variant="outline" className="text-[10px]">
+                <Badge variant="outline" className="text-[0.625rem]">
                   {item.aspectRatio}
                 </Badge>
               )}
               {item.imageSize && (
-                <Badge variant="outline" className="text-[10px]">
+                <Badge variant="outline" className="text-[0.625rem]">
                   {item.imageSize}
                 </Badge>
               )}

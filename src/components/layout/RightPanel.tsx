@@ -71,7 +71,7 @@ export function RightPanel({ width }: RightPanelProps) {
     <aside className="hidden h-full shrink-0 flex-col overflow-hidden bg-background lg:flex" style={{ width: width ?? 288 }}>
       {/* Header */}
       <div className="flex h-12 mt-5 shrink-0 items-center justify-between px-4">
-        <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+        <span className="text-[0.6875rem] font-semibold uppercase tracking-wider text-muted-foreground">
           {t('panel.tasks')}
         </span>
         <Tooltip>
@@ -102,7 +102,7 @@ export function RightPanel({ width }: RightPanelProps) {
         {/* File tree */}
         <div className="flex-1 min-h-0 overflow-hidden">
           <div className="px-4 pt-1 pb-1">
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+            <span className="text-[0.6875rem] font-semibold uppercase tracking-wider text-muted-foreground">
               {t('panel.files')}
             </span>
           </div>

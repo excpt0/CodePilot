@@ -93,7 +93,7 @@ export function MarketplaceBrowser({ onInstalled }: MarketplaceBrowserProps) {
             {error && (
               <div className="flex flex-col items-center gap-2 py-8 text-muted-foreground px-3">
                 <p className="text-xs text-center text-status-error-foreground">{t('skills.marketplaceError')}</p>
-                <p className="text-[10px] text-center">{error}</p>
+                <p className="text-[0.625rem] text-center">{error}</p>
               </div>
             )}
             {!loading && !error && results.length === 0 && (

@@ -117,7 +117,7 @@ export function FileAttachmentsCapsules() {
                 className="h-5 w-5 rounded object-cover"
               />
             )}
-            <span className="max-w-[120px] truncate text-[11px]">
+            <span className="max-w-[120px] truncate text-[0.6875rem]">
               {file.filename || 'file'}
             </span>
             <Button
@@ -153,7 +153,7 @@ export function CommandBadge({
       <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 text-primary pl-2.5 pr-1.5 py-1 text-xs font-medium border border-primary/20">
         <span className="font-mono">{command}</span>
         {description && (
-          <span className="text-primary/60 text-[10px]">{description}</span>
+          <span className="text-primary/60 text-[0.625rem]">{description}</span>
         )}
         <Button
           type="button"

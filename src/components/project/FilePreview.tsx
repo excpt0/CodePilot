@@ -95,10 +95,10 @@ export function FilePreview({ filePath, onBack }: FilePreviewProps) {
       {/* File info */}
       {preview && (
         <div className="flex items-center gap-2 pb-2">
-          <Badge variant="secondary" className="text-[10px]">
+          <Badge variant="secondary" className="text-[0.625rem]">
             {preview.language}
           </Badge>
-          <span className="text-[10px] text-muted-foreground">
+          <span className="text-[0.625rem] text-muted-foreground">
             {t('filePreview.lines', { count: preview.line_count })}
           </span>
         </div>
@@ -132,7 +132,7 @@ export function FilePreview({ filePath, onBack }: FilePreviewProps) {
                 margin: 0,
                 padding: "8px",
                 borderRadius: "6px",
-                fontSize: "11px",
+                fontSize: "0.6875rem",
                 lineHeight: "1.5",
               }}
               lineNumberStyle={{

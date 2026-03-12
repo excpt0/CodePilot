@@ -162,11 +162,11 @@ export function SplitColumn({ sessionId, isActive, onClose, onFocus }: SplitColu
         <div className="flex items-center gap-1.5 min-w-0">
           {projectName && (
             <>
-              <span className="text-[11px] text-muted-foreground shrink-0">{projectName}</span>
-              <span className="text-[11px] text-muted-foreground shrink-0">/</span>
+              <span className="text-[0.6875rem] text-muted-foreground shrink-0">{projectName}</span>
+              <span className="text-[0.6875rem] text-muted-foreground shrink-0">/</span>
             </>
           )}
-          <span className="text-[11px] font-medium truncate">{sessionTitle}</span>
+          <span className="text-[0.6875rem] font-medium truncate">{sessionTitle}</span>
         </div>
         <Button
           variant="ghost"

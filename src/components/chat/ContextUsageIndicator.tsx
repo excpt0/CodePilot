@@ -110,7 +110,7 @@ export function ContextUsageIndicator({ messages, modelName }: ContextUsageIndic
                 <span>{formatTokens(usage.outputTokens)}</span>
               </div>
             </div>
-            <p className="text-[10px] text-muted-foreground pt-1 border-t border-border">
+            <p className="text-[0.625rem] text-muted-foreground pt-1 border-t border-border">
               {t('context.estimate')}
             </p>
           </div>

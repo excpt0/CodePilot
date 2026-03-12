@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useSyncExternalStore } from "react";
-import { type Icon, Gear, Code, UserCircle, Plug, ChartBar } from "@/components/ui/icon";
+import { type Icon, Gear, Code, UserCircle, Plug, ChartBar, PaintBrush } from "@/components/ui/icon";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { GeneralSection } from "./GeneralSection";
@@ -9,10 +9,11 @@ import { ProviderManager } from "./ProviderManager";
 import { CliSettingsSection } from "./CliSettingsSection";
 import { UsageStatsSection } from "./UsageStatsSection";
 import { AssistantWorkspaceSection } from "./AssistantWorkspaceSection";
+import { AppearanceSection } from "./AppearanceSection";
 import { useTranslation } from "@/hooks/useTranslation";
 import type { TranslationKey } from "@/i18n";
 
-type Section = "general" | "providers" | "cli" | "usage" | "assistant";
+type Section = "general" | "appearance" | "providers" | "cli" | "usage" | "assistant";
 
 interface SidebarItem {
   id: Section;
@@ -22,6 +23,7 @@ interface SidebarItem {
 
 const sidebarItems: SidebarItem[] = [
   { id: "general", label: "General", icon: Gear },
+  { id: "appearance", label: "Appearance", icon: PaintBrush },
   { id: "providers", label: "Providers", icon: Plug },
   { id: "cli", label: "Claude CLI", icon: Code },
   { id: "usage", label: "Usage", icon: ChartBar },
@@ -55,6 +57,7 @@ export function SettingsLayout() {
 
   const settingsLabelKeys: Record<string, TranslationKey> = {
     'General': 'settings.general',
+    'Appearance': 'settings.appearance',
     'Providers': 'settings.providers',
     'Claude CLI': 'settings.claudeCli',
     'Usage': 'settings.usage',
@@ -101,6 +104,7 @@ export function SettingsLayout() {
         {/* Content */}
         <div className="flex-1 overflow-auto p-6">
           {activeSection === "general" && <GeneralSection />}
+          {activeSection === "appearance" && <AppearanceSection />}
           {activeSection === "providers" && <ProviderManager />}
           {activeSection === "cli" && <CliSettingsSection />}
           {activeSection === "usage" && <UsageStatsSection />}

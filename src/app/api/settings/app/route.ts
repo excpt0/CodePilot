@@ -12,6 +12,7 @@ const ALLOWED_KEYS = [
   'dangerously_skip_permissions',
   'locale',
   'thinking_mode',
+  'appearance_font_size',
 ];
 
 export async function GET() {

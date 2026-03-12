@@ -319,7 +319,7 @@ export function McpManager() {
                   }`} />
                   <span className="text-xs font-medium truncate">{s.name}</span>
                 </div>
-                <Badge variant="outline" className="text-[10px] shrink-0">
+                <Badge variant="outline" className="text-[0.625rem] shrink-0">
                   {s.status}
                 </Badge>
               </div>

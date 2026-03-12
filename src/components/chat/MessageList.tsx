@@ -93,7 +93,7 @@ function RewindButton({ sessionId, userMessageId }: { sessionId: string; userMes
 
   if (state === 'done') {
     return (
-      <span className="text-[10px] text-status-success-foreground ml-2">
+      <span className="text-[0.625rem] text-status-success-foreground ml-2">
         {t('messageList.rewindDone' as TranslationKey)}
       </span>
     );
@@ -102,14 +102,14 @@ function RewindButton({ sessionId, userMessageId }: { sessionId: string; userMes
   if (state === 'preview' && preview) {
     return (
       <span className="inline-flex items-center gap-1.5 ml-2">
-        <span className="text-[10px] text-muted-foreground">
+        <span className="text-[0.625rem] text-muted-foreground">
           {preview.filesChanged?.length || 0} files, +{preview.insertions || 0}/-{preview.deletions || 0}
         </span>
         <Button
           variant="link"
           size="xs"
           onClick={handleRewind}
-          className="text-[10px] text-primary h-auto p-0"
+          className="text-[0.625rem] text-primary h-auto p-0"
         >
           {t('messageList.rewindConfirm' as TranslationKey)}
         </Button>
@@ -117,7 +117,7 @@ function RewindButton({ sessionId, userMessageId }: { sessionId: string; userMes
           variant="link"
           size="xs"
           onClick={() => setState('idle')}
-          className="text-[10px] text-muted-foreground h-auto p-0"
+          className="text-[0.625rem] text-muted-foreground h-auto p-0"
         >
           {t('messageList.rewindCancel' as TranslationKey)}
         </Button>
@@ -131,7 +131,7 @@ function RewindButton({ sessionId, userMessageId }: { sessionId: string; userMes
       size="xs"
       onClick={handleDryRun}
       disabled={state === 'loading'}
-      className="text-[10px] text-muted-foreground hover:text-foreground ml-2 opacity-0 group-hover:opacity-100 h-auto p-0"
+      className="text-[0.625rem] text-muted-foreground hover:text-foreground ml-2 opacity-0 group-hover:opacity-100 h-auto p-0"
     >
       {state === 'loading' ? '...' : t('messageList.rewindToHere' as TranslationKey)}
     </Button>

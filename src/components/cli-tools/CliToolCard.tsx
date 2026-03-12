@@ -68,7 +68,7 @@ export function CliToolCard({
           {tool.categories.map(cat => (
             <span
               key={cat}
-              className="inline-block rounded-full bg-muted px-1.5 py-0.5 text-[10px] text-muted-foreground shrink-0"
+              className="inline-block rounded-full bg-muted px-1.5 py-0.5 text-[0.625rem] text-muted-foreground shrink-0"
             >
               {t(`cliTools.category.${cat}` as TranslationKey)}
             </span>

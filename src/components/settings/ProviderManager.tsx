@@ -199,18 +199,18 @@ export function ProviderManager() {
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">
                   <span className="text-sm font-medium">Claude Code</span>
-                  <Badge variant="outline" className="text-[10px] px-1.5 py-0">
+                  <Badge variant="outline" className="text-[0.625rem] px-1.5 py-0">
                     {t('provider.default')}
                   </Badge>
                   {Object.keys(envDetected).length > 0 && (
-                    <Badge variant="outline" className="text-[10px] px-1.5 py-0 text-status-success-foreground border-status-success-border">
+                    <Badge variant="outline" className="text-[0.625rem] px-1.5 py-0 text-status-success-foreground border-status-success-border">
                       ENV
                     </Badge>
                   )}
                 </div>
               </div>
             </div>
-            <p className="text-[11px] text-muted-foreground ml-[34px] leading-relaxed">
+            <p className="text-[0.6875rem] text-muted-foreground ml-[34px] leading-relaxed">
               {t('provider.ccSwitchHint')}
             </p>
           </div>
@@ -229,7 +229,7 @@ export function ProviderManager() {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
                       <span className="text-sm font-medium truncate">{provider.name}</span>
-                      <Badge variant="secondary" className="text-[10px] px-1.5 py-0">
+                      <Badge variant="secondary" className="text-[0.625rem] px-1.5 py-0">
                         {provider.api_key
                           ? (provider.extra_env?.includes("ANTHROPIC_AUTH_TOKEN") ? "Auth Token" : "API Key")
                           : t('provider.configured')}
@@ -258,7 +258,7 @@ export function ProviderManager() {
                 {/* Gemini Image model selector — capsule buttons */}
                 {provider.provider_type === 'gemini-image' && (
                   <div className="ml-[34px] mt-2 flex items-center gap-1.5">
-                    <span className="text-[11px] text-muted-foreground mr-1">{isZh ? '模型' : 'Model'}:</span>
+                    <span className="text-[0.6875rem] text-muted-foreground mr-1">{isZh ? '模型' : 'Model'}:</span>
                     {GEMINI_IMAGE_MODELS.map((m) => {
                       const isActive = getGeminiImageModel(provider) === m.value;
                       return (
@@ -267,7 +267,7 @@ export function ProviderManager() {
                           variant="ghost"
                           size="sm"
                           onClick={() => handleImageModelChange(provider, m.value)}
-                          className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-medium border h-auto ${
+                          className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[0.6875rem] font-medium border h-auto ${
                             isActive
                               ? 'bg-primary/10 text-primary border-primary/30'
                               : 'text-muted-foreground border-border/60 hover:text-foreground hover:border-foreground/30 hover:bg-accent/50'

@@ -8,8 +8,13 @@ import {
   resolveShikiTheme,
   resolveShikiThemes,
 } from "@/lib/theme/code-themes";
+import { useAppearance } from "@/hooks/useAppearance";
 import { useTranslation } from "@/hooks/useTranslation";
 import { Sun, Moon, Desktop } from "@/components/ui/icon";
+import {
+  FONT_SIZES,
+  type FontSizeKey,
+} from "@/lib/appearance";
 import {
   Select,
   SelectContent,
@@ -21,6 +26,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { SettingsCard } from "@/components/patterns/SettingsCard";
 import { FieldRow } from "@/components/patterns/FieldRow";
+import type { TranslationKey } from "@/i18n";
 
 // ── Theme Mode Pill Selector ────────────────────────────────────────
 
@@ -120,24 +126,34 @@ function UIPreview() {
       <Button size="sm" className="text-xs h-auto py-1">Primary</Button>
       <Button size="sm" variant="secondary" className="text-xs h-auto py-1">Secondary</Button>
       <Button size="sm" variant="destructive" className="text-xs h-auto py-1">Destructive</Button>
-      <span className="inline-flex items-center rounded-full bg-accent px-2.5 py-0.5 text-[10px] font-medium text-accent-foreground">
+      <span className="inline-flex items-center rounded-full bg-accent px-2.5 py-0.5 text-[0.625rem] font-medium text-accent-foreground">
         Badge
       </span>
-      <span className="inline-flex items-center rounded-full border border-border bg-card px-2.5 py-0.5 text-[10px] text-card-foreground">
+      <span className="inline-flex items-center rounded-full border border-border bg-card px-2.5 py-0.5 text-[0.625rem] text-card-foreground">
         Card
       </span>
-      <span className="inline-flex items-center rounded-full bg-muted px-2.5 py-0.5 text-[10px] text-muted-foreground">
+      <span className="inline-flex items-center rounded-full bg-muted px-2.5 py-0.5 text-[0.625rem] text-muted-foreground">
         Muted
       </span>
     </div>
   );
 }
 
+// ── Font Size Labels ────────────────────────────────────────────────
+
+const FONT_SIZE_LABELS: Record<FontSizeKey, TranslationKey> = {
+  small: "settings.fontSizeSmall",
+  default: "settings.fontSizeDefault",
+  large: "settings.fontSizeLarge",
+  "extra-large": "settings.fontSizeXL",
+};
+
 // ── Main Appearance Section ─────────────────────────────────────────
 
 export function AppearanceSection() {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const { family, setFamily, families } = useThemeFamily();
+  const { fontSize, setFontSize } = useAppearance();
   const { t } = useTranslation();
   const isDark = resolvedTheme === "dark";
 
@@ -148,6 +164,8 @@ export function AppearanceSection() {
   );
 
   if (!mounted) return null;
+
+  const fontSizeKeys = Object.keys(FONT_SIZES) as FontSizeKey[];
 
   return (
     <div className="space-y-4">
@@ -167,7 +185,7 @@ export function AppearanceSection() {
       </FieldRow>
 
       {theme === "system" && resolvedTheme && (
-        <p className="text-[11px] text-muted-foreground pl-1">
+        <p className="text-[0.6875rem] text-muted-foreground pl-1">
           {resolvedTheme === "dark" ? t("settings.modeDark") : t("settings.modeLight")}
         </p>
       )}
@@ -204,6 +222,32 @@ export function AppearanceSection() {
             ))}
           </SelectContent>
         </Select>
+      </FieldRow>
+
+      {/* Font Size */}
+      <FieldRow
+        label={t("settings.fontSize")}
+        description={t("settings.fontSizeDesc")}
+        separator
+      >
+        <div className="flex gap-2">
+          {fontSizeKeys.map((key) => (
+            <Button
+              key={key}
+              variant="ghost"
+              size="sm"
+              onClick={() => setFontSize(key)}
+              className={cn(
+                "rounded-md px-3 py-1.5 text-xs font-medium h-auto",
+                fontSize === key
+                  ? "bg-accent text-accent-foreground"
+                  : "text-muted-foreground hover:bg-accent/50 hover:text-foreground"
+              )}
+            >
+              {t(FONT_SIZE_LABELS[key])}
+            </Button>
+          ))}
+        </div>
       </FieldRow>
 
       {/* Preview */}

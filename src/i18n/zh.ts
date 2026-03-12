@@ -82,6 +82,12 @@ const zh: Record<TranslationKey, string> = {
   'settings.language': '语言',
   'settings.languageDesc': '选择界面显示语言',
   'settings.usage': '用量统计',
+  'settings.fontSize': '字号',
+  'settings.fontSizeDesc': '控制基础文字大小，所有界面元素会按比例缩放。',
+  'settings.fontSizeSmall': '小',
+  'settings.fontSizeDefault': '默认',
+  'settings.fontSizeLarge': '大',
+  'settings.fontSizeXL': '特大',
 
   // ── Settings: Appearance ──────────────────────────────────────
   'settings.appearance': '外观',

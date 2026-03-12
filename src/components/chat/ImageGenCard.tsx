@@ -114,7 +114,7 @@ export function ImageGenCard({
       {/* Reference images (垫图) */}
       {referenceImages && referenceImages.length > 0 && (
         <div>
-          <span className="text-[10px] text-muted-foreground/60 mb-1 block">
+          <span className="text-[0.625rem] text-muted-foreground/60 mb-1 block">
             {t('imageGen.referenceImages' as TranslationKey)}
           </span>
           <div className="flex gap-1.5 flex-wrap">
@@ -140,18 +140,18 @@ export function ImageGenCard({
       <div className="flex items-center justify-between gap-2">
         <div className="flex items-center gap-1.5 flex-wrap">
           {model && (
-            <Badge variant="secondary" className="text-[10px] gap-1">
+            <Badge variant="secondary" className="text-[0.625rem] gap-1">
               <PaintBrush size={12} />
               {model}
             </Badge>
           )}
           {aspectRatio && (
-            <Badge variant="outline" className="text-[10px]">
+            <Badge variant="outline" className="text-[0.625rem]">
               {aspectRatio}
             </Badge>
           )}
           {imageSize && (
-            <Badge variant="outline" className="text-[10px]">
+            <Badge variant="outline" className="text-[0.625rem]">
               {imageSize}
             </Badge>
           )}

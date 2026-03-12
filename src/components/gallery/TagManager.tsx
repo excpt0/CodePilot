@@ -73,7 +73,7 @@ export function TagManager({
               <Badge
                 variant={isSelected ? 'default' : 'outline'}
                 className={cn(
-                  'text-[11px] cursor-pointer transition-colors',
+                  'text-[0.6875rem] cursor-pointer transition-colors',
                   compact && 'px-1.5 py-0',
                   isSelected && tag.color && 'border-transparent'
                 )}

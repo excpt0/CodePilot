@@ -85,6 +85,12 @@ const en = {
   'settings.language': 'Language',
   'settings.languageDesc': 'Choose the display language for the interface',
   'settings.usage': 'Usage',
+  'settings.fontSize': 'Font Size',
+  'settings.fontSizeDesc': 'Controls the base text size. All UI elements scale proportionally.',
+  'settings.fontSizeSmall': 'Small',
+  'settings.fontSizeDefault': 'Default',
+  'settings.fontSizeLarge': 'Large',
+  'settings.fontSizeXL': 'Extra Large',
 
   // ── Settings: Appearance ──────────────────────────────────────
   'settings.appearance': 'Appearance',

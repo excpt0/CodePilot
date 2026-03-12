@@ -125,7 +125,7 @@ export function CommandListGroup({ label, separator, children }: CommandListGrou
   return (
     <div className={cn(separator && "border-t")}>
       {label && (
-        <div className="px-3 py-1.5 text-[10px] font-medium text-muted-foreground">
+        <div className="px-3 py-1.5 text-[0.625rem] font-medium text-muted-foreground">
           {label}
         </div>
       )}

@@ -217,7 +217,7 @@ export default function ChatSessionPage({ params }: ChatSessionPageProps) {
                 </TooltipTrigger>
                 <TooltipContent>
                   <p className="text-xs break-all">{sessionWorkingDir || projectName}</p>
-                  <p className="text-[10px] text-muted-foreground mt-0.5">Click to open in Finder</p>
+                  <p className="text-[0.625rem] text-muted-foreground mt-0.5">Click to open in Finder</p>
                 </TooltipContent>
               </Tooltip>
               <span className="text-xs text-muted-foreground shrink-0">/</span>

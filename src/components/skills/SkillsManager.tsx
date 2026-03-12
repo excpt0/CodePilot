@@ -215,7 +215,7 @@ export function SkillsManager() {
             <div className="p-1">
               {globalSkills.length > 0 && (
                 <div className="mb-1">
-                  <span className="px-3 py-1 text-[10px] font-medium uppercase text-muted-foreground">
+                  <span className="px-3 py-1 text-[0.625rem] font-medium uppercase text-muted-foreground">
                     Global
                   </span>
                   {globalSkills.map((skill) => (
@@ -235,7 +235,7 @@ export function SkillsManager() {
               )}
               {installedSkills.length > 0 && (
                 <div className="mb-1">
-                  <span className="px-3 py-1 text-[10px] font-medium uppercase text-muted-foreground">
+                  <span className="px-3 py-1 text-[0.625rem] font-medium uppercase text-muted-foreground">
                     Installed
                   </span>
                   {installedSkills.map((skill) => (
@@ -255,7 +255,7 @@ export function SkillsManager() {
               )}
               {pluginSkills.length > 0 && (
                 <div className="mb-1">
-                  <span className="px-3 py-1 text-[10px] font-medium uppercase text-muted-foreground">
+                  <span className="px-3 py-1 text-[0.625rem] font-medium uppercase text-muted-foreground">
                     Plugins
                   </span>
                   {pluginSkills.map((skill) => (
